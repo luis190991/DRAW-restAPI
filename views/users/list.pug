@@ -1,0 +1,6 @@
+extends ../layout
+block content
+  h1 Usuarios
+  if name
+    h2 Hola #{name}
+  input(type='text', name='saludo', value=name)

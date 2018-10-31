@@ -5,7 +5,8 @@ function create(req, res, next){
 };
 
 function list(req, res, next){
-  res.send("Lista los Usuarios");
+  //let name = req.params.name ? req.params.name : 'SIN NOMBRE';
+  res.render('users/list', {name: req.params.name});
 };
 
 function index(req, res, next){

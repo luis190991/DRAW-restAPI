@@ -1,7 +1,8 @@
 const express = require('express');
 
 function plus(req, res, next){
-  res.send(`${parseInt(req.params.n1) + parseInt(req.params.n2)}`);
+  let x = {'resultado': parseInt(req.params.n1) + parseInt(req.params.n2)};
+  res.json(x);
 };
 
 function multiply(req, res, next){
