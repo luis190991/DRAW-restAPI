@@ -1,0 +1,19 @@
+extends ../layout
+block content
+  h1 Productos
+  table
+    thead
+      tr
+        th Descripción
+        th Categoría
+        th Precio
+        th 
+          a(href='/products/blank') Nuevo      
+    tbody
+      each product in products.docs
+        tr
+          td #{product.description}
+          td #{product.category}
+          td #{product.price}
+          td 
+            a(href='#') Editar 

@@ -1,14 +1,17 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const usersController = require('../controllers/usersController');
+const { check, body, params} = require('express-validator/check');
 
-
-router.post('/', usersController.create);
+router.post('/',[
+  body('name').not().isEmpty(),
+  body('lastName').not().isEmpty()
+], usersController.create);
 
 /* GET users listing. */
-router.get('/:name?', usersController.list);
+router.get('/:page?', usersController.list);
 
-router.get('/:id', usersController.index);
+router.get('/show/:id', usersController.index);
 
 router.put('/:id', usersController.update);
 

@@ -1,0 +1,12 @@
+extends ../layout
+block content
+  h1 Nuevo Producto
+  
+  form(action='/products/', method='POST')
+    label(for='description') Descripción
+    input(type='text', id='description', name='description')
+    label(for='category') Categoría
+    input(type='text', id='category', name='category')
+    label(for='price') Precio
+    input(type='number', id='price', name='price')
+    input(type='submit')
