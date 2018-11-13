@@ -9,7 +9,9 @@ router.post('/',[
 ], usersController.create);
 
 /* GET users listing. */
-router.get('/:page?', usersController.list);
+router.get('/', usersController.list);
+
+router.get('/get/:page?', usersController.getAll);
 
 router.get('/show/:id', usersController.index);
 

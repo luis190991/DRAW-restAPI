@@ -2,6 +2,10 @@ const express = require('express');
 const User = require('../models/user');
 const {validationResult} = require('express-validator/check');
 
+function list(req, res, next){
+  res.render('users/list', {});
+}
+
 function create(req, res, next){
 
   const errors = validationResult(req);
@@ -31,7 +35,7 @@ function create(req, res, next){
       });
 };
 
-function list(req, res, next){
+function getAll(req, res, next){
 
   let page = req.params.page ? req.params.page : 1;
 
@@ -117,6 +121,7 @@ function destroy(req, res, next){
 };
 
 module.exports = {
+  getAll,
   create,
   list,
   index,

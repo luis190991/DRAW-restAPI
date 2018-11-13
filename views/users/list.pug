@@ -1,6 +1,24 @@
 extends ../layout
 block content
   h1 Usuarios
-  if name
-    h2 Hola #{name}
-  input(type='text', name='saludo', value=name)
+  div(id='app')
+    input(type='text', v-model='user.name')
+    input(type='text', v-model='user.lastName')
+      
+    input(type='number', v-model='operators.n1')
+    input(type='number', v-model='operators.n2')
+    button(@click='sum') Sumar
+    p {{operators.res}} {{result}}
+    p {{user.name}} {{user.lastName}}
+    
+    table
+      thead
+        tr
+          th name
+          th lastName
+          th age
+      tbody
+        tr(v-for='user in users')
+          td {{user._name}}
+          td {{user._lastName}}
+          td {{user._age}}
