@@ -25,7 +25,8 @@ const server = http.createServer(app);
 
 //mongodb://<dbUser>?:<dbpassword>?@<direction>:<port>/<dbName>
 
-const uri = 'mongodb://localhost:27017/restApp';
+//const uri = 'mongodb://localhost:27017/restApp';
+const uri = 'mongodb://luramirez:abcd1234@ds113134.mlab.com:13134/draw-db';
 
 mongoose.connect(uri);
 
